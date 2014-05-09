@@ -95,8 +95,8 @@ class CrawlKeyword(object):
 					searched_page = self._get_page(self._get_url(page,timescope,timescope))
 				self.store(searched_page)
 				
-				if page%3 == 0:
-					sleeping_time = random.uniform(DEFAULT_SLEEPING_TIME-20,DEFAULT_SLEEPING_TIME+20)
+				if page%10 == 0:
+					sleeping_time = random.uniform(DEFAULT_SLEEPING_TIME-40,DEFAULT_SLEEPING_TIME)
 					print 'sleeping_time',sleeping_time
 					time.sleep(sleeping_time)
 
@@ -184,7 +184,7 @@ class CrawlKeyword(object):
 			searched_page = f.read()
 		return searched_page
 	
-	def store(self,page):
+	def store(self,page,spe_chr=chr(29)):
 		if '\u62b1\u6b49\uff0c\u672a\u627e\u5230\u201c' not in page:
 			tweets = page2tweets(page) ##print tweets[0]
 			print len(tweets),'tweets in this page'
@@ -199,7 +199,8 @@ class CrawlKeyword(object):
 					n_likes = str(weiboinfo[1])
 					n_forwards = str(weiboinfo[2])
 					n_comments = str(weiboinfo[3])
-                                        string2file = 'mid: '+mid+'uid: '+uid+'content: '+content+'n_forwards: '+n_forwards+'n_comments: '+n_comments
+                                        string2file = spe_chr.join([mid,uid,content,n_likes,n_forwards,n_comments])
+                                        #string2file = 'mid:'+mid+' uid:'+uid+' content:'+content+' n_forwards:'+n_forwards+' n_comments:'+n_comments
 				        f.write(string2file+'\n')
 				except:
 					pass
@@ -216,8 +217,8 @@ class CrawlKeyword(object):
 			if e.errno != errno.ENOENT:
 				pass
 def main():
-	result = CrawlKeyword("郁彬")
-	result.realtime_search(2014,5,1,0,2014,5,7,10)
+	result = CrawlKeyword("红米")
+	result.realtime_search(2014,5,1,17,2014,5,7,10)
 
 if __name__ == '__main__':
 	main() 
