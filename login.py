@@ -222,8 +222,8 @@ def get_user(username):
 if __name__ == '__main__':
     
     
-    username = 'yuanhang.nju@gmail.com'
-    pwd = 'nlpnjunlpnju'
+    username = 'username'
+    pwd = 'password'
     cookie_file = 'weibo_login_cookies.dat'
     
     if login(username, pwd, cookie_file):
@@ -231,8 +231,6 @@ if __name__ == '__main__':
 	#if you see the above message, then do whatever you want with urllib2, following is a example for fetch Kaifu's Weibo Home Page
 	#Trying to fetch Kaifu Lee's Weibo home page
 	kaifu_page = urllib2.urlopen('http://s.weibo.com/wb/%25E4%25B8%25B9%25E9%25BA%25A6%25E5%25A5%25B3%25E7%258E%258B&xsort=time&timescope=custom:2014-04-27-14:2014-04-27-15&page=1').read()
-	with open('test.html','w') as f:
-		f.write(kaifu_page)
 	print kaifu_page
 
     else:
