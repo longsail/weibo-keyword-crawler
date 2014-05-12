@@ -57,6 +57,7 @@ class CrawlKeyword(object):
 			for month in range(month_s, month_end+1):
 				for day in range(day_s,day_end+1):
 					hour_end = hour_end+1 if day == day_end else 24
+                                        hour_s = hour_s if day == day_s else 0
 					for hour in range(hour_s,hour_end):
 						self.realtime_search1hour(year,month,day,hour)
 
@@ -96,7 +97,7 @@ class CrawlKeyword(object):
 				self.store(searched_page)
 				
 				if page%10 == 0:
-					sleeping_time = random.uniform(DEFAULT_SLEEPING_TIME-40,DEFAULT_SLEEPING_TIME)
+					sleeping_time = random.uniform(DEFAULT_SLEEPING_TIME-20,DEFAULT_SLEEPING_TIME+20)
 					print 'sleeping_time',sleeping_time
 					time.sleep(sleeping_time)
 
@@ -218,7 +219,7 @@ class CrawlKeyword(object):
 				pass
 def main():
 	result = CrawlKeyword("红米")
-	result.realtime_search(2014,5,1,17,2014,5,7,10)
+	result.realtime_search(2014,5,3,0,2014,5,7,10)
 
 if __name__ == '__main__':
 	main() 
