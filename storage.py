@@ -1,4 +1,5 @@
-# -*- coding: utf-8 -*-
+#!/usr/bin/env/ python
+#coding=utf-8
 '''
     author: lyuxiao
     created on 2013.11.1
