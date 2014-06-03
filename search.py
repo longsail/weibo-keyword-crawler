@@ -3,23 +3,9 @@
 '''
 
 @author: zouyh
-Created on 2014/05/10
+Created on 2014.05.10
 
-real time search 
-	website suffix is "&xsort=time&nodup=1&page=[num]"
-	eg: &xsort=time&nodup=1&page=4
-	
-	when nodup=0, some similar tweets will be ignored.
-		no data if num > page_range
-	result of num=0 is the same as num=1
-
-advanced search
-	eg:
-		http://s.weibo.com/weibo/[keyword]&xsort=time&timescope=custom:2013-11-01-0:2013-11-01-1&nodup=1&page=3
-		http://s.weibo.com/weibo/[keyword]&xsort=time&timescope=custom:2013-11-08-18:2013-11-08-23&nodup=1&page=6
-	
-	a detailed explaination is here:
-		http://www.mzwu.com/article.asp?id=3485
+a detailed explaination is here:http://www.mzwu.com/article.asp?id=3485
 	
 '''
 import sys
