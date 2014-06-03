@@ -1,8 +1,8 @@
 #!/usr/bin/env/ python
 #coding=utf-8
 '''
-    author: lyuxiao
-    created on 2013.11.1
+    author: zouyh 
+    created on 2014.05.10
 '''
 try:
 	import sys
