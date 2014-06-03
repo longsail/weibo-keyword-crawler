@@ -2,9 +2,8 @@
 #coding=utf-8
 
 '''
-
-@author: lyuxiao
-created on 2013.12.22
+@author: zouyh
+created on 2014.05.10
 
 '''
 import os
@@ -12,15 +11,13 @@ import time
 import sys
 from StringIO import StringIO
 import re
-
 import json
 
 try:
 	from lxml import etree
 except ImportError:
         print >> sys.stderr
-
-
+        sys.exit()
 
 def page2tweets(searchpage):
 
@@ -34,13 +31,9 @@ def page2tweets(searchpage):
 	for script in scripts:
 		if r'pid":"pl_wb_feedlist",' in script:
 			
-# 			print script
 			pagecontent = script.replace(r'STK && STK.pageletM && STK.pageletM.view(','')
-			#print pagecontent[0:50]
-			#print pagecontent[-20:-1]
 
 			tweet_dic = json.loads(pagecontent[:-1])
-			#print tweet_dic['html']
 			parser = etree.HTMLParser()
 			htmltree = etree.fromstring(tweet_dic['html'],parser)
 			tweets = htmltree.xpath(u"//*/dl[@class='feed_list W_linecolor ']")
