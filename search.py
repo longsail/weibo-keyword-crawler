@@ -3,7 +3,7 @@
 '''
 
 @author: zouyh
-modified on 2014.05.10
+Created on 2014/05/10
 
 real time search 
 	website suffix is "&xsort=time&nodup=1&page=[num]"
