@@ -3,7 +3,7 @@
 '''
 
 @author: zouyh
-modified on 2013.11.26
+modified on 2014.05.10
 
 real time search 
 	website suffix is "&xsort=time&nodup=1&page=[num]"
@@ -38,6 +38,7 @@ try:
 	from htmlparser import *
 except ImportError:
         print >> sys.stderr
+        sys.exit()
 
 DEFAULT_SLEEPING_TIME = 100
 ATTEMPT_TIME = 5
@@ -96,7 +97,7 @@ class CrawlKeyword(object):
 					searched_page = self._get_page(self._get_url(page,timescope,timescope))
 				self.store(searched_page)
 				
-				if page%10 == 0:
+				if page%5 == 0:
 					sleeping_time = random.uniform(DEFAULT_SLEEPING_TIME-20,DEFAULT_SLEEPING_TIME+20)
 					print 'sleeping_time',sleeping_time
 					time.sleep(sleeping_time)
@@ -218,8 +219,8 @@ class CrawlKeyword(object):
 			if e.errno != errno.ENOENT:
 				pass
 def main():
-	result = CrawlKeyword("红米")
-	result.realtime_search(2014,5,3,0,2014,5,7,10)
+	result = CrawlKeyword("奥迪")
+	result.realtime_search(2014,5,1,0,2014,5,7,10)
 
 if __name__ == '__main__':
 	main() 
