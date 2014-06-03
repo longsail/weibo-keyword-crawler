@@ -2,7 +2,7 @@
 #coding=utf-8
 '''
     @author zouyh
-    Created on 2014/05/10
+    Created on 2014.05.10
 '''
 import os
 import sys
