@@ -205,8 +205,8 @@ class CrawlKeyword(object):
 			if e.errno != errno.ENOENT:
 				pass
 def main():
-	result = CrawlKeyword("奥迪")
-	result.realtime_search(2014,5,1,0,2014,5,7,10)
+	result = CrawlKeyword("世界杯")
+	result.realtime_search(2014,6,2,11,2014,6,4,0)
 
 if __name__ == '__main__':
 	main() 
