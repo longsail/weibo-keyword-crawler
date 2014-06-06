@@ -21,12 +21,6 @@ except IOError:
 finally:
 	conf_file.close()
 
-DBNAME = conf_dic['searchdb']['dbname']
-DBHOST = conf_dic['searchdb']['host']
-DBPORT = conf_dic['searchdb']['port']
-
-BOOL_GETCOMMENTS = conf_dic['searchdb']['BOOL_getcomments']
-
 USERNAME_1 = conf_dic['login'][0]['username_1']
 PASSWORD_1 = conf_dic['login'][0]['password_1']
 
@@ -41,17 +35,10 @@ PASSWORD_4 = conf_dic['login'][3]['password_4']
 
 
 COOKIE_FILE = conf_dic['cookie_file']
-LOGDB = conf_dic['logdb']['dbname']
-LOGHOST = conf_dic['logdb']['host']
-LOGUSER = conf_dic['logdb']['user']
-LOGPW = conf_dic['logdb']['password']
-
 
 if __name__ == '__main__':
-	print DBNAME, DBHOST, DBPORT
 	print USERNAME_1,PASSWORD_1
 	print USERNAME_2,PASSWORD_2
 	print USERNAME_3,PASSWORD_3
 	print USERNAME_4,PASSWORD_4
 	print COOKIE_FILE
-	print LOGDB, LOGHOST, LOGUSER, LOGPW
